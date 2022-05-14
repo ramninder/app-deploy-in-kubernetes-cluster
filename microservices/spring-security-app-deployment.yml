@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: spring-security-app
+    labels:
+        app: spring-security-app
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: spring-security-app
+    template:
+        metadata:
+            name: spring-security-app
+            labels:
+                app: spring-security-app
+        spec:
+            containers:
+                - name: spring-security-app
+                  image: ramninder/spring-security-app
